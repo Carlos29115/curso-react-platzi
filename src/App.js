@@ -1,5 +1,4 @@
-import "./App.css";
-import styles from "./components/presentationals/layout/layout.css";
+import "./components/presentationals/layout/layout.css";
 import { TodoCounter } from "./components/TodoCounter";
 import TodoList from "./components/TodoList";
 import TodoItem from "./components/TodoItem";

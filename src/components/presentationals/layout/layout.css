@@ -1,17 +1,18 @@
 .containerPrincipal {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center;
-  height: 100vh;
-  gap: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  max-height: 100%;
+  min-height: 100vh;
   background-color: #000000e3;
+  align-items: center;
+  justify-items: center;
 }
 
 .container {
-  width: 30vw;
+  min-height: 30rem;
+  max-height: 35rem;
+  min-width: 31rem;
   color: white;
-  height: 60vh;
   background-color: #000000;
   border-radius: 30px;
   border: 3px solid lime;
@@ -26,12 +27,19 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  margin-bottom: 35px;
+}
+
+.containerOne__Tittle{
+  margin: 0 0 30px 0;
 }
 
 .containerTwo--Styles {
   font-size: 13px;
   color: #ffffff;
   display: flex;
+  width: 32rem;
+  min-width: 24rem;
   flex-direction: column;
   align-items: center;
   overflow-y: auto;
@@ -40,7 +48,7 @@
 .containerTwo__SubTitulo {
   font-size: 17px;
   color: #0dff96;
-  margin-top: 16px;
+  margin-top: 16px 0 0 0;
 }
 
 .containerTwo__TodoList {
@@ -62,4 +70,29 @@
 .containerTwo__TodoSearch {
   margin: 2.5px 0;
   max-width: 22rem;
+}
+
+.containerTwo__actions {
+  cursor: pointer;
+}
+
+.containerTwo__actions--Done:hover {
+  color: #00EF10;
+}
+
+.Icon-check--completed {
+  color: #00EF10;
+}
+
+.Parrafo--completed {
+  text-decoration: line-through;
+  color: #00EF10;
+}
+
+.containerTwo__actions--Delete:hover{
+  color:red;
+}
+
+.containerTwo__ParrafoTodo {
+  margin: 0;
 }

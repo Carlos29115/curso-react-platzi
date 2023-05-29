@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
 
 function CreateTodoButton() {
   return (
-    <button className='nes-btn is-primary'>Añadir tarea</button>
-  )
+    <button
+      className="nes-btn is-primary"
+      onClick={() => {
+        console.log("Has hecho click");
+      }}
+    >
+      Añadir tarea
+    </button>
+  );
 }
 
-export {CreateTodoButton}
+export { CreateTodoButton };
