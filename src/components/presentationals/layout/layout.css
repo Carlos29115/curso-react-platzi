@@ -46,9 +46,9 @@
 }
 
 .containerTwo__SubTitulo {
+  padding: 30px;
   font-size: 17px;
   color: #0dff96;
-  margin-top: 16px 0 0 0;
 }
 
 .containerTwo__TodoList {
@@ -86,7 +86,7 @@
 
 .Parrafo--completed {
   text-decoration: line-through;
-  color: #00EF10;
+  color: #c11212;
 }
 
 .containerTwo__actions--Delete:hover{

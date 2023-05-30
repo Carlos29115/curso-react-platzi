@@ -1,8 +1,6 @@
 import React from "react";
 
-function TodoSearch() {
-  const [searchValue, setSearchValue] = React.useState('');
-  console.log(searchValue);
+function TodoSearch({ searchValue, setSearchValue }) {
   return (
     <>
       <p className="containerTwo__SubTitulo">Lista de Todo's</p>
