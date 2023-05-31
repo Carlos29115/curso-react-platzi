@@ -39,7 +39,8 @@
   color: #ffffff;
   display: flex;
   width: 32rem;
-  min-width: 24rem;
+  min-width: 34rem;
+  min-height: 37rem;
   flex-direction: column;
   align-items: center;
   overflow-y: auto;
@@ -54,16 +55,16 @@
 .containerTwo__TodoList {
   padding: 0;
   margin: 30px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 26px;
 }
 
 .containerTwo__TodoItem {
   display: flex;
   justify-content: space-between;
+  min-width: 27rem;
+  max-width: 27rem;
   align-items: center;
-  margin: 20px 13px;
   gap: 20px;
 }
 
@@ -72,9 +73,9 @@
   max-width: 22rem;
 }
 
-.containerTwo__actions {
+/* .containerTwo__actions {
   cursor: pointer;
-}
+} */
 
 .containerTwo__actions--Done:hover {
   color: #00EF10;
@@ -82,6 +83,18 @@
 
 .Icon-check--completed {
   color: #00EF10;
+}
+
+.containerTwo__CreateTodoButton{
+  border: none;
+  outline: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #212529;
 }
 
 .Parrafo--completed {

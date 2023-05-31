@@ -7,10 +7,10 @@ import { TodoSearch } from "./components/TodoSearch";
 import { CreateTodoButton } from "./components/CreateTodoButton";
 
 const defaultTodos = [
-  { text: "Cortar cebolla", completed: true },
+  { text: "Cortar cebolla", completed: false },
   { text: "Tomar el curso de Intro a ReactJs", completed: true },
-  { text: "Llorar con la llorona", completed: true },
-  { text: "lalalalalaal", completed: false },
+  { text: "Llorar con la llorona", completed: false },
+  { text: "lalalalalaaló", completed: false },
 ];
 
 function App() {
@@ -18,16 +18,19 @@ function App() {
   const [todos, setTodos] = React.useState(defaultTodos);
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = todos.length;
-  const searchTodo = todos.filter((todo) => todo.text.includes(searchValue));
-  console.log(searchTodo)
+  const searchTodo = todos.filter((todo) => {
+    const todoText = todo.text.toLowerCase();
+    const searchText = searchValue.toLowerCase();
+    return todoText.includes(searchText);
+  });
+  const todosCompleted = todos.map((todoCompleted)=> todoCompleted.completed)
+  const [estado, setEstado] = React.useState("");
+  
   return (
     <>
       <div className="containerPrincipal">
         <div className="container containerOne--textStyle">
-          <TodoCounter
-            completed={completedTodos}
-            total={totalTodos}
-          />
+          <TodoCounter completed={completedTodos} total={totalTodos} />
           <CreateTodoButton />
         </div>
         <div className="container containerTwo--Styles">
@@ -36,11 +39,12 @@ function App() {
             setSearchValue={setSearchValue}
           />
           <TodoList>
-            {defaultTodos.map((todo) => (
+            {searchTodo.map((todo) => (
               <TodoItem
                 text={todo.text}
                 completed={todo.completed}
                 key={todo.text}
+                todos ={todosCompleted}
               />
             ))}
           </TodoList>
