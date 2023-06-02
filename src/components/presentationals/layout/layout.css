@@ -73,10 +73,6 @@
   max-width: 22rem;
 }
 
-/* .containerTwo__actions {
-  cursor: pointer;
-} */
-
 .containerTwo__actions--Done:hover {
   color: #00EF10;
 }
@@ -85,9 +81,8 @@
   color: #00EF10;
 }
 
-.containerTwo__CreateTodoButton{
+.containerTwo__ButtonDone{
   border: none;
-  outline: none;
   width: 40px;
   height: 40px;
   border-radius: 20px;
@@ -95,6 +90,10 @@
   align-items: center;
   justify-content: center;
   background-color: #212529;
+}
+
+.containerTwo__ButtonDone:focus{
+  outline: none;
 }
 
 .Parrafo--completed {

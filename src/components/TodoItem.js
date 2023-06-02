@@ -1,12 +1,17 @@
 import React from "react";
 
-function TodoItem({ text, completed, setTodos, todos }) {
+function TodoItem({ text, completed, todos, handleChange, setTodo }) {
   return (
     <li className="containerTwo__TodoItem nes-container is-dark">
-      <button className="containerTwo__CreateTodoButton" onClick={()=>{
-        
-        console.log(todos)
-      }}>
+      <button
+        className="containerTwo__ButtonDone"
+        onClick={() => {
+          const positionTodo = todos
+            .map((miniTodo) => miniTodo.text)
+            .indexOf(text);
+          setTodo(handleChange(positionTodo, text));
+        }}
+      >
         <span
           className={`material-symbols-outlined containerTwo__actions containerTwo__actions--Done ${
             completed ? "Icon-check--completed" : ""
