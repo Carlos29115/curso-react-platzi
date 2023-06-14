@@ -23,9 +23,30 @@ function App() {
     const searchText = searchValue.toLowerCase();
     return todoText.includes(searchText);
   });
-  const todosCompleted = todos.map((todoCompleted)=> todoCompleted.completed)
-  const [estado, setEstado] = React.useState("");
-  
+
+  function handleChange(id, todoText) {
+    const todoListOne = {
+      ...todos.filter((oldTodo) => oldTodo.text === todoText),
+    }[0];
+    const todoListTwo = {
+      text: todoListOne.text,
+      completed: !todoListOne.completed,
+    };
+    const todoListThree = [
+      ...todos.filter((oldTodo) => oldTodo.text !== todoText),
+    ];
+    todoListThree.splice(id, 0, todoListTwo);
+
+    return todoListThree;
+  }
+
+  function DeleteTodo(todoText) {
+    const todoListUpdate = [...todos];
+    const positionTodo = todos.findIndex((todo) => todo.text === todoText);
+    todoListUpdate.splice(positionTodo, 1);
+    return todoListUpdate;
+  }
+
   return (
     <>
       <div className="containerPrincipal">
@@ -39,14 +60,19 @@ function App() {
             setSearchValue={setSearchValue}
           />
           <TodoList>
-            {searchTodo.map((todo) => (
-              <TodoItem
-                text={todo.text}
-                completed={todo.completed}
-                key={todo.text}
-                todos ={todosCompleted}
-              />
-            ))}
+            {searchTodo.map((todo) => {
+              return (
+                <TodoItem
+                  text={todo.text}
+                  completed={todo.completed}
+                  key={todo.text}
+                  todos={todos}
+                  setTodo={setTodos}
+                  handleChange={handleChange}
+                  DeleteTodo={DeleteTodo}
+                />
+              );
+            })}
           </TodoList>
         </div>
       </div>

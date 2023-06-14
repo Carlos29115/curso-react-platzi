@@ -1,6 +1,6 @@
 .containerPrincipal {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(31rem, 1fr));
   max-height: 100%;
   min-height: 100vh;
   background-color: #000000e3;
@@ -12,6 +12,7 @@
   min-height: 30rem;
   max-height: 35rem;
   min-width: 31rem;
+  max-width: 34rem;
   color: white;
   background-color: #000000;
   border-radius: 30px;
@@ -34,6 +35,10 @@
   margin: 0 0 30px 0;
 }
 
+.containerOne__Parrafo{
+  padding: 20px;
+}
+
 .containerTwo--Styles {
   font-size: 13px;
   color: #ffffff;
@@ -44,6 +49,7 @@
   flex-direction: column;
   align-items: center;
   overflow-y: auto;
+  
 }
 
 .containerTwo__SubTitulo {
@@ -66,16 +72,35 @@
   max-width: 27rem;
   align-items: center;
   gap: 20px;
+  transition: all 0.5s ease ;
+}
+
+.containerTwo__actions {
+  color: #ffffff;
+  min-width: 22px;
+}
+
+.containerTwo__Tittle--Done {
+  font-size: 11px !important;
+  position: absolute;
+  top: 25px;
+  color: #00EF10 !important;
+}
+
+.containerTwo__Tittle--Unfinished{
+  font-size: 11px !important;
+  position: absolute;
+  top: 25px;
+}
+
+.containerTwo__TodoItem--completed{
+  border-color: #00EF10 !important;
 }
 
 .containerTwo__TodoSearch {
   margin: 2.5px 0;
   max-width: 22rem;
 }
-
-/* .containerTwo__actions {
-  cursor: pointer;
-} */
 
 .containerTwo__actions--Done:hover {
   color: #00EF10;
@@ -85,7 +110,7 @@
   color: #00EF10;
 }
 
-.containerTwo__CreateTodoButton{
+.containerTwo__ButtonActions{
   border: none;
   outline: none;
   width: 40px;
@@ -97,9 +122,12 @@
   background-color: #212529;
 }
 
+.containerTwo__ButtonActions:focus {
+  outline: none;
+}
+
 .Parrafo--completed {
-  text-decoration: line-through;
-  color: #c11212;
+  color: #00EF10;
 }
 
 .containerTwo__actions--Delete:hover{

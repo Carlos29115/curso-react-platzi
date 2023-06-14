@@ -4,7 +4,7 @@ function TodoCounter({completed, total}) {
   return (
   <div>
     <h1 className='containerOne__Tittle'>TODOS</h1>
-    <p>Has completado {completed} de {total} TODOS</p>
+    <p className="containerOne__Parrafo">{`${completed === total ? 'Felicidades terminaste todas tus tareas 🥳' : `Has completado ${completed} de ${total} TODOS`}`}</p>
   </div>
   );
 }
