@@ -18,7 +18,7 @@ function App() {
   const [todos, setTodos] = React.useState(defaultTodos);
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = todos.length;
-  const searchTodo = todos.filter((todo) => {
+  let searchTodo = todos.filter((todo) => {
     const todoText = todo.text.toLowerCase();
     const searchText = searchValue.toLowerCase();
     return todoText.includes(searchText);
