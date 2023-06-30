@@ -29,14 +29,7 @@ function TodoItem({
           setTodo(handleChange(positionTodo, text));
         }}
       >
-        <IconsSVG type={'check'}/>
-        {/* <span
-          className={`material-symbols-outlined containerTwo__actions containerTwo__actions--Done ${
-            completed ? "Icon-check--completed" : ""
-          } `}
-        >
-          done
-        </span> */}
+        <IconsSVG type={'check'} color={'green'} completed={completed}/>
       </button>
       <p
         className={`containerTwo__ParrafoTodo ${
@@ -51,10 +44,7 @@ function TodoItem({
           return setTodo(DeleteTodo(text));
         }}
       >
-        <IconsSVG type={'delete'}/>
-        {/* <span className="material-symbols-outlined containerTwo__actions containerTwo__actions--Delete">
-          close
-        </span> */}
+        <IconsSVG type={'delete'} color={'red'}/>
       </button>
     </li>
   );
