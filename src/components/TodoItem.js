@@ -29,7 +29,7 @@ function TodoItem({
           setTodo(handleChange(positionTodo, text));
         }}
       >
-        <IconsSVG type={'check'} color={'green'} completed={completed}/>
+        <IconsSVG type={'check'} color={'#00EF10'} completed={completed}/>
       </button>
       <p
         className={`containerTwo__ParrafoTodo ${

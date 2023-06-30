@@ -6,16 +6,26 @@ import TodoItem from "./components/TodoItem";
 import { TodoSearch } from "./components/TodoSearch";
 import { CreateTodoButton } from "./components/CreateTodoButton";
 
-const defaultTodos = [
-  { text: "Cortar cebolla", completed: false },
-  { text: "Tomar el curso de Intro a ReactJs", completed: true },
-  { text: "Llorar con la llorona", completed: false },
-  { text: "lalalalalaaló", completed: false },
-];
+// const defaultTodos = [
+//   { text: "Cortar cebolla", completed: false },
+//   { text: "Tomar el curso de Intro a ReactJs", completed: true },
+//   { text: "Llorar con la llorona", completed: false },
+//   { text: "lalalalalaaló", completed: false },
+// ];
+
+// let todosItems = JSON.stringify(defaultTodos)
+// const dataLocal = localStorage.setItem("TODOSITEM_V1" ,todosItems)
+let dataLocal = localStorage.getItem("TODOSITEM_V1")
+if (!dataLocal){
+  dataLocal = []
+}else{
+  // JSON.parse(dataLocal)
+  dataLocal= JSON.parse(dataLocal)
+}
 
 function App() {
   const [searchValue, setSearchValue] = React.useState("");
-  const [todos, setTodos] = React.useState(defaultTodos);
+  const [todos, setTodos] = React.useState(dataLocal);
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = todos.length;
   let searchTodo = todos.filter((todo) => {
@@ -23,6 +33,12 @@ function App() {
     const searchText = searchValue.toLowerCase();
     return todoText.includes(searchText);
   });
+  
+  function newListTodos (list){
+    const newList = JSON.stringify(list)
+    localStorage.setItem("TODOSITEM_V1" ,newList)
+    setTodos(list)
+}
 
   function handleChange(id, todoText) {
     const todoListOne = {
@@ -67,7 +83,7 @@ function App() {
                   completed={todo.completed}
                   key={todo.text}
                   todos={todos}
-                  setTodo={setTodos}
+                  setTodo={newListTodos}
                   handleChange={handleChange}
                   DeleteTodo={DeleteTodo}
                 />

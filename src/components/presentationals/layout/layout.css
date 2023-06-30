@@ -67,6 +67,7 @@
 
 .containerTwo__TodoItem {
   display: flex;
+  position: relative;
   justify-content: space-between;
   min-width: 27rem;
   max-width: 27rem;
@@ -121,16 +122,16 @@
   background-color: #212529;
 }
 
+.containerTwo__ButtonActions:hover span .containerTwo__actions--Done{
+  fill: #00EF10;
+}
+
 .containerTwo__ButtonActions:focus {
   outline: none;
 }
 
 .Parrafo--completed {
   color: #00EF10;
-}
-
-.containerTwo__actions--Delete:hover{
-  color:red;
 }
 
 .containerTwo__ParrafoTodo {
