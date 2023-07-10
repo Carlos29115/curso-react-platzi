@@ -1,7 +1,7 @@
 import React from 'react'
-import { ReactComponent as CheckSVG } from './presentationals/layout/check.svg';
-import { ReactComponent as DeleteSVG } from './presentationals/layout/delete.svg';
-
+import { ReactComponent as CheckSVG } from './svg/check.svg';
+import { ReactComponent as DeleteSVG } from './svg/delete.svg';
+import './styles.css'
 
 function IconsSVG({type, color, completed}) {
   const iconTypes = {

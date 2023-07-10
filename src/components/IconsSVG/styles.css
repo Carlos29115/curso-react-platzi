@@ -1,0 +1,7 @@
+.containerTwo__actions {
+  color: #ffffff;
+  min-width: 22px;
+}
+.containerTwo__actions--Done:hover {
+  color: #00ef10;
+}

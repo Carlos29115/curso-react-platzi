@@ -1,0 +1,50 @@
+.containerTwo__TodoItem {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  min-width: 27rem;
+  max-width: 27rem;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.5s ease;
+}
+.containerTwo__TodoItem--completed {
+  border-color: #00ef10 !important;
+}
+.containerTwo__Tittle--Done {
+  font-size: 11px !important;
+  position: absolute;
+  top: 25px;
+  color: #00ef10 !important;
+}
+
+.containerTwo__Tittle--Unfinished {
+  font-size: 11px !important;
+  position: absolute;
+  top: 25px;
+}
+.containerTwo__ButtonActions {
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #212529;
+}
+.containerTwo__ButtonActions:hover span .containerTwo__actions--Done {
+  fill: #00ef10;
+}
+
+.containerTwo__ButtonActions:focus {
+  outline: none;
+}
+
+.containerTwo__ParrafoTodo {
+  margin: 0;
+}
+
+.Parrafo--completed {
+  color: #00ef10;
+}

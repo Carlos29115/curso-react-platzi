@@ -1,5 +1,6 @@
 import React from "react";
-import { IconsSVG } from "./IconsSVG";
+import { IconsSVG } from "../IconsSVG";
+import './styles.css'
 
 function TodoItem({
   text,
@@ -41,7 +42,7 @@ function TodoItem({
       <button
         className="containerTwo__ButtonActions"
         onClick={() => {
-          return setTodo(DeleteTodo(text));
+          return setTodo(DeleteTodo(text))  ;
         }}
       >
         <IconsSVG type={'delete'} color={'red'}/>
