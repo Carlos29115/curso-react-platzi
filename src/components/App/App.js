@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../layout/layout.css";
 import { useLocalStorage } from "../../hooks/localStorage/localStorage";
 import AppUI from "./AppUI";
@@ -11,11 +11,14 @@ import AppUI from "./AppUI";
 // ];
 
 // let todosItems = JSON.stringify(defaultTodos)
-// const dataLocal = localStorage.setItem("TODOSITEM_V1" ,todosItems)
+// const dataLocal = localStorage.setItem("TODOS_V1" ,todosItems)
 
 function App() {
   const [searchValue, setSearchValue] = React.useState("");
-  const [todos, setNewListItems] = useLocalStorage("TODOS_V1", []);
+  const { item:todos, newListItems:setNewListItems, loading, error } = useLocalStorage(
+    "TODOS_V1",
+    []
+  );
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = todos.length;
   let searchTodo = todos.filter((todo) => {
@@ -49,18 +52,19 @@ function App() {
 
   return (
     <>
-    
-    <AppUI
-      searchValue={searchValue}
-      todos={todos}
-      setSearchValue={setSearchValue}
-      setNewListItems={setNewListItems}
-      completedTodos={completedTodos}
-      totalTodos={totalTodos}
-      searchTodo={searchTodo}
-      handleChange={handleChange}
-      DeleteTodo={DeleteTodo}
-    />
+      <AppUI
+        loading={loading}
+        error={error}
+        searchValue={searchValue}
+        todos={todos}
+        setSearchValue={setSearchValue}
+        setNewListItems={setNewListItems}
+        completedTodos={completedTodos}
+        totalTodos={totalTodos}
+        searchTodo={searchTodo}
+        handleChange={handleChange}
+        DeleteTodo={DeleteTodo}
+      />
     </>
   );
 }

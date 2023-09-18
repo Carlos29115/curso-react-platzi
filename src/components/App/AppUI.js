@@ -4,8 +4,11 @@ import TodoList from "../TodoList";
 import TodoItem from "../TodoItem";
 import { TodoSearch } from "../TodoSearch";
 import { CreateTodoButton } from "../CreateTodoButton";
+import TodosLoading from "../TodosLoading";
 
 function AppUI({
+  loading,
+  error,
   searchValue,
   todos,
   setSearchValue,
@@ -29,7 +32,9 @@ function AppUI({
             setSearchValue={setSearchValue}
           />
           <TodoList>
-            {console.log(todos)}
+            {loading && <TodosLoading />}
+            {error && <p>Hubo un error al cargar los Todo's</p>}
+            {(!loading && totalTodos === 0) && <p>Crea tu primer Todo 📋</p>}
             {searchTodo.map((todo) => {
               return (
                 <TodoItem

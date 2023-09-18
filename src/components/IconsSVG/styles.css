@@ -2,6 +2,20 @@
   color: #ffffff;
   min-width: 22px;
 }
+
 .containerTwo__actions--Done:hover {
   color: #00ef10;
+}
+
+.stateLoading{
+  animation: ButtonsLoading 1s linear infinite alternate;
+}
+
+@keyframes ButtonsLoading {
+  0%{
+    fill: hsl(200, 20%, 70%);
+  }
+  100%{
+    fill: hsl(200, 20%, 100%);
+  }
 }
