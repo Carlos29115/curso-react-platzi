@@ -6,6 +6,8 @@
   background-color: #000000e3;
   align-items: center;
   justify-items: center;
+
+  
 }
 
 .container {
@@ -19,6 +21,13 @@
   border: 3px solid lime;
   box-shadow: 0px 0px 20px 0px #10ff00;
 }
+
+@media screen and (max-width: 1010px) {
+  .containerPrincipal{
+    
+  }
+}
+
 .containerOne--textStyle {
   color: #0dff96;
   text-align: center;
@@ -36,11 +45,12 @@
   color: #ffffff;
   display: flex;
   width: 32rem;
-  min-width: 34rem;
+  min-width: 30rem;
   min-height: 37rem;
   flex-direction: column;
   align-items: center;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .containerTwo__SubTitulo {
@@ -48,3 +58,4 @@
   font-size: 17px;
   color: #0dff96;
 }
+
