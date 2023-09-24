@@ -1,12 +1,14 @@
-# Repositorio base del Curso de Introducción a React.js en Platzi
+# Repositorio base de TodoMachine
 
-¡Hola, Platzinauta!
+Este proyecto se basa en la creacion de todo's o tareas en las que se puedan añadir y ir marcando como completadas al finalizarlas.
 
-En este repositorio encontrarás el código de todas las clases del [Curso de Introducción a React.js](https://platzi.com/reactjs). Para empezar solo debes clonar este repositorio (`git clone`), instalar sus dependencias (`npm i`) y ejecutar la aplicación (`npm start`).
+## Donde puedo ver la aplicacion y utilizarla??
 
-La rama principal contiene el código con el que eempezamos el curso. En las demás ramas encontrarás el código de las siguientes clases y finalmente el deploy de la aplicación.
+La app es publica y se puede encontrar en el siguiente link: https://carlos29115.github.io/curso-react-platzi/ .
 
-¡Mucha suerte aprendiendo React! #NuncaParesDeAprender
+## Como funciona internamente la app
+
+La aplicacion se creo con react, css, js vanilla y como manejador de paquetes de node se utilizo yarn, se crearon estados globales con useContext para no hacer prop drilling y se creo un custom Hook para extraer y ingresar datos del localStorage.
 
 ## Getting Started with Create React App
 
@@ -16,7 +18,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `npm start`
+### `yarn`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -24,7 +26,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm run build`
+### `yarn build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -34,7 +36,11 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### `yarn deploy`
+
+Hace internamente un yarn build y crea una rama remota en git para mostrar nuestro proyecto en page github usando solo la carpeta build.
+
+### `yarn eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
