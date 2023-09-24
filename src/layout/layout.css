@@ -8,16 +8,27 @@
   justify-items: center;
 }
 
+@media (max-width: 1080px) {
+  .containerPrincipal {
+    grid-template-rows: repeat(auto-fill, minmax(31rem, 1fr));
+    grid-template-columns: none;
+  }
+  .container{
+    min-width: 0%;
+    height: 100%;
+    max-height: 20rem !important;
+  }
+}
+
 .container {
   min-height: 30rem;
   max-height: 35rem;
-  min-width: 31rem;
   max-width: 34rem;
   color: white;
   background-color: #000000;
   border-radius: 30px;
-  border: 3px solid lime;
-  box-shadow: 0px 0px 20px 0px #10ff00;
+  border: 3px solid #0dff96;
+  box-shadow: 0px 0px 20px 0px #0dff96;
 }
 .containerOne--textStyle {
   color: #0dff96;
@@ -35,8 +46,8 @@
   font-size: 13px;
   color: #ffffff;
   display: flex;
-  width: 32rem;
-  min-width: 34rem;
+  max-width: 32rem;
+  width: 100%;
   min-height: 37rem;
   flex-direction: column;
   align-items: center;

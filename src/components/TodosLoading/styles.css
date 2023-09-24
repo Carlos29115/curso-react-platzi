@@ -57,3 +57,7 @@
     border-color: hsl(200, 20%, 100%);
   }
 }
+
+.containerTwo__TodoItem{
+  width: 100%;
+}

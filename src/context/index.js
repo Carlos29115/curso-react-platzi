@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocalStorage } from "../hooks/localStorage/localStorage";
 
 const TodoContext = React.createContext();
 
 function TodoProvider({ children }) {
   const [searchValue, setSearchValue] = React.useState("");
+  const [stateModal, setStateModal] = useState(false);
   const {
     item: todos,
     newListItems: setNewListItems,
@@ -34,6 +35,11 @@ function TodoProvider({ children }) {
 
     return todoListThree;
   }
+  function addTodos(todoText) {
+    const newTodo = { text: todoText, completed: false };
+    todos.push(newTodo);
+    setNewListItems(todos);
+  }
 
   function DeleteTodo(todoText) {
     const todoListUpdate = [...todos];
@@ -55,6 +61,9 @@ function TodoProvider({ children }) {
         searchTodo,
         handleChange,
         DeleteTodo,
+        stateModal,
+        setStateModal,
+        addTodos,
       }}
     >
       {children}

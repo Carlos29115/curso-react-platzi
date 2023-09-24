@@ -1,15 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { TodoContext } from "../../context";
 import { IconsSVG } from "../IconsSVG";
-import './styles.css'
+import "./styles.css";
 
-function TodoItem({
-  text,
-  completed,
-  todos,
-  handleChange,
-  setTodo,
-  DeleteTodo,
-}) {
+function TodoItem({ text, completed }) {
+  const { todos, setNewListItems, handleChange, DeleteTodo } =
+    useContext(TodoContext);
+
   return (
     <li
       className={`containerTwo__TodoItem ${
@@ -27,10 +24,10 @@ function TodoItem({
         className="containerTwo__ButtonActions"
         onClick={() => {
           const positionTodo = todos.findIndex((todo) => todo.text === text);
-          setTodo(handleChange(positionTodo, text));
+          setNewListItems(handleChange(positionTodo, text));
         }}
       >
-        <IconsSVG type={'check'} color={'#00EF10'} completed={completed}/>
+        <IconsSVG type={"check"} color={"#00EF10"} completed={completed} />
       </button>
       <p
         className={`containerTwo__ParrafoTodo ${
@@ -42,10 +39,10 @@ function TodoItem({
       <button
         className="containerTwo__ButtonActions"
         onClick={() => {
-          return setTodo(DeleteTodo(text))  ;
+          return setNewListItems(DeleteTodo(text));
         }}
       >
-        <IconsSVG type={'delete'} color={'red'}/>
+        <IconsSVG type={"delete"} color={"red"} />
       </button>
     </li>
   );

@@ -2,20 +2,19 @@
   display: flex;
   position: relative;
   justify-content: space-between;
-  min-width: 27rem;
   max-width: 27rem;
   align-items: center;
   gap: 20px;
   transition: all 0.5s ease;
 }
 .containerTwo__TodoItem--completed {
-  border-color: #00ef10 !important;
+  border-color: #0dff96 !important;
 }
 .containerTwo__Tittle--Done {
   font-size: 11px !important;
   position: absolute;
   top: 25px;
-  color: #00ef10 !important;
+  color: #0dff96 !important;
 }
 
 .containerTwo__Tittle--Unfinished {
@@ -46,5 +45,5 @@
 }
 
 .Parrafo--completed {
-  color: #00ef10;
+  color: #0dff96;
 }

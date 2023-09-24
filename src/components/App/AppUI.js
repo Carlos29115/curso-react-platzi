@@ -1,60 +1,50 @@
-import React from "react";
-import { TodoCounter } from "../TodoCounter";
-import TodoList from "../TodoList";
-import TodoItem from "../TodoItem";
-import { TodoSearch } from "../TodoSearch";
-import { CreateTodoButton } from "../CreateTodoButton";
-import TodosLoading from "../TodosLoading";
+import React, { useContext } from "react";
 import { TodoContext } from "../../context";
+import { CreateTodoButton } from "../CreateTodoButton";
+import Modal from "../Modal";
+import { TodoCounter } from "../TodoCounter";
+import TodoItem from "../TodoItem";
+import TodoList from "../TodoList";
+import { TodoSearch } from "../TodoSearch";
+import TodosLoading from "../TodosLoading";
+import TodoForm from "../todoForm";
 
 function AppUI() {
+  const { loading, error, totalTodos, searchTodo, stateModal } =
+    useContext(TodoContext);
   return (
-    <TodoContext.Consumer>
-      {({
-        loading,
-        error,
-        searchValue,
-        todos,
-        setSearchValue,
-        setNewListItems,
-        completedTodos,
-        totalTodos,
-        searchTodo,
-        handleChange,
-        DeleteTodo,
-      }) => (
-        <div className="containerPrincipal">
-          <div className="container containerOne--textStyle">
-            <TodoCounter completed={completedTodos} total={totalTodos} />
-            <CreateTodoButton />
-          </div>
-          <div className="container containerTwo--Styles">
-            <TodoSearch
-              searchValue={searchValue}
-              setSearchValue={setSearchValue}
-            />
-            <TodoList>
-              {loading && <TodosLoading />}
-              {error && <p>Hubo un error al cargar los Todo's</p>}
-              {!loading && totalTodos === 0 && <p>Crea tu primer Todo 📋</p>}
-              {searchTodo.map((todo) => {
-                return (
-                  <TodoItem
-                    text={todo.text}
-                    completed={todo.completed}
-                    key={todo.text}
-                    todos={todos}
-                    setTodo={setNewListItems}
-                    handleChange={handleChange}
-                    DeleteTodo={DeleteTodo}
-                  />
-                );
-              })}
-            </TodoList>
-          </div>
-        </div>
-      )}
-    </TodoContext.Consumer>
+    <div className="containerPrincipal">
+      <div className="container containerOne--textStyle">
+        <TodoCounter />
+        <CreateTodoButton />
+        {stateModal && (
+          <Modal>
+            <TodoForm />
+          </Modal>
+        )}
+      </div>
+      <div className="container containerTwo--Styles">
+        <TodoSearch />
+        <TodoList>
+          {/* Estado de carga */}
+          {loading && <TodosLoading />}
+          {/* Estado de error */}
+          {error && <p>Hubo un error al cargar los Todo's</p>}
+          {/* Estado de 0 Todo's */}
+          {!loading && totalTodos === 0 && <p>Crea tu primer Todo 📋</p>}
+
+          {searchTodo.map((todo) => {
+            return (
+              <TodoItem
+                text={todo.text}
+                completed={todo.completed}
+                key={todo.text}
+              />
+            );
+          })}
+        </TodoList>
+      </div>
+    </div>
   );
 }
 
